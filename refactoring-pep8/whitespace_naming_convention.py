@@ -5,9 +5,9 @@ This is a guess game. Guess what number the computer has chosen!
 """
 
 import random
-LOWER_LIMIT=0
-UPPER_LIMIT= 100
-randomNumber = random.randint (LOWER_LIMIT ,UPPER_LIMIT )
+LOWER_LIMIT = 0
+UPPER_LIMIT = 100
+randomNumber = random.randint(LOWER_LIMIT, UPPER_LIMIT)
 print('The computer has selected a number between 0 and 100. Use your'
       'supernatural superpowers to guess what the number is.')
 while True:
@@ -15,7 +15,7 @@ while True:
     if UserGuess > randomNumber:
         print("Guess a smaller number.")
     elif UserGuess < randomNumber:
-        print ("Guess a larger number.")
+        print("Guess a larger number.")
     else: #UserGuess == randomNumber:
-        print ("You Won!")
+        print("You Won!")
         break

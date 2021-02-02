@@ -1,5 +1,7 @@
-# by Kami Bigdely
-# Docstrings and blank lines
+"""
+by Kami Bigdely
+Docstrings and blank lines
+"""
 class OnBoardTemperatureSensor:
     VOLTAGE_TO_TEMP_FACTOR = 5.6
     def __init__(self):
@@ -22,7 +24,7 @@ class CarbonMonoxideSensor:
     def read_sensor_voltage(self):
         # In real life, it should read from hardware.        
         return 2.3
-    def convert_voltage_to_carbon_monoxide_level(voltage, temperature):
+    def convert_voltage_to_carbon_monoxide_level(self, voltage, temperature):
         return voltage * CarbonMonoxideSensor.VOLTAGE_TO_CO_FACTOR * temperature
     
 class DisplayUnit:
@@ -30,7 +32,7 @@ class DisplayUnit:
         self.string = ''
     def display(self,msg):
         print(msg)
-class CarbonMonoxideDevice():
+class CarbonMonoxideDevice:
     def __init__(self, co_sensor, display_unit):
         self.carbonMonoxideSensor = co_sensor 
         self.display_unit = display_unit       
