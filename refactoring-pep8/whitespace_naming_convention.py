@@ -8,7 +8,8 @@ import random
 LOWER_LIMIT=0
 UPPER_LIMIT= 100
 randomNumber = random.randint (LOWER_LIMIT ,UPPER_LIMIT )
-print('The computer has selected a number between 0 and 100. Use your supernatural superpowers to guess what the number is.')
+print('The computer has selected a number between 0 and 100. Use your'
+      'supernatural superpowers to guess what the number is.')
 while True:
     UserGuess = int (input("Enter a number between 0 and 100 (including): "))
     if UserGuess > randomNumber:
