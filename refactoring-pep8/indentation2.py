@@ -4,11 +4,13 @@ Indentation
 """
 
 def write_to_db():
+    """write info to databse"""
     print('person info are written into db.')
 
 def set_person_info(first_name, last_name, gender,
                     date_of_birth, photo, nationality,
                     place_of_birth):
+    """Set info to specific person"""
     if not first_name:
         print('first name is empty.')
     if not last_name:

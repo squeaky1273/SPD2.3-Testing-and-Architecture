@@ -5,26 +5,33 @@ Docstrings and blank lines
 class OnBoardTemperatureSensor:
     VOLTAGE_TO_TEMP_FACTOR = 5.6
     def __init__(self):
+        """Initialize"""
         pass
-    def read_voltage(self):        
+    def read_voltage(self):  
+        """Set voltage to specific integer"""      
         return 2.7
     def get_temperature(self):
+        """Get temperature of voltage"""
         return self.read_voltage() * OnBoardTemperatureSensor.VOLTAGE_TO_TEMP_FACTOR # [celcius]
   
 class CarbonMonoxideSensor:
     VOLTAGE_TO_CO_FACTOR = 0.048
     def __init__(self, temperature_sensor):
+        """Initialize sensor temperature"""
         self.on_board_temp_sensor = temperature_sensor
         if not self.on_board_temp_sensor:
             self.on_board_temp_sensor = OnBoardTemperatureSensor()
     def get_carbon_monoxide_level(self):
+        """CGet carbon monoxide level"""
         sensor_voltage = self.read_sensor_voltage()
         self.carbon_monoxide = CarbonMonoxideSensor.convert_voltage_to_carbon_monoxide_level(sensor_voltage, self.on_board_temp_sensor.get_temperature())
         return self.carbon_monoxide
     def read_sensor_voltage(self):
+        """Read current voltage"""
         # In real life, it should read from hardware.        
         return 2.3
     def convert_voltage_to_carbon_monoxide_level(self, voltage, temperature):
+        """Convert voltage"""
         return voltage * CarbonMonoxideSensor.VOLTAGE_TO_CO_FACTOR * temperature
     
 class DisplayUnit:
